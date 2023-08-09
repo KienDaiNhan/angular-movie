@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
         this.getTrendingMovies();
         this.getTheatreMovies();
         this.getPopularMovies();
-       
+        //this.goToMovie('type','id');
       }
       getTrendingMovies() {
           this.http.get('http://localhost:4200/assets/data/trending-movies.json').subscribe((movies) => {

@@ -3,16 +3,13 @@
     <div class="top">
         <div class="left">
             <div class="name">{{movie?.name}}</div>
-            <div class="rating">
-                <div class="rating">
+            <div class="rating">              
                     <span class="rating-value">{{movie?.rating}}</span>
                     <ng-template #t let-fill="fill">
                         <span class="star">
                             <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
                         </span>
-                    </ng-template>                           
-                    
-                </div>
+                    </ng-template>                                                           
             </div>
             <div class="cover">
                 <img [src]="movie?.cover">
