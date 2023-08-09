@@ -1,0 +1,19 @@
+<div class="login-container">
+    <img src="assets/images/film.png" alt="" class="film">
+    <div class="logo">CGV Trung Kiên</div>
+    <div class="desc">Trải nghiệm điện ảnh chất lượng nhất tại cụm rạp CGV trên toàn quốc. Trang thông tin tổng hợp lịch chiếu, trailers phim mới nhất tại CGV Cinemas Việt Nam.</div>
+    <div class="login-form">
+        <div class="form-group">
+            <label for="uname">Tên đăng nhập</label>
+            <input type="text" name="uname" placeholder="Nhập tên đăng nhập" class="form-control"[(ngModel)]="username" />    
+        </div>
+        <div class="form-group">
+            <label for="pword">Mật khẩu</label>
+            <input type="password" name="pword" placeholder="Nhập mật khẩu"  class="form-control" [(ngModel)]="password" />
+        </div>
+        <div class="btn-container">
+            <div class="error">{{errorMsg}}</div>
+            <button class="btn btn-dark" (click)="login()">Đăng nhập</button>
+        </div>
+    </div>
+</div>

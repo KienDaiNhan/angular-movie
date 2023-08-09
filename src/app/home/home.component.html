@@ -1,0 +1,90 @@
+<app-header></app-header>
+<div class="home-container">
+    <div class="all-movies">
+        <div class="trending-movies">
+            <div class="top">
+                <h4>Phim Thịnh Hành</h4>
+                <div class="view-all">View all</div>
+            </div>
+            <div class="movies-thumnail">
+                <div class="movie" *ngFor="let movie of trendingMovies">
+                    <div class="cover" (click)="goToMovie('trending', movie.id)">
+                        <img [src]="movie.cover" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="name" (click)="goToMovie('trending',movie.id)">{{movie.name}}</div>
+                        <div class="rating">
+                            <span class="rating-value">{{movie.rating}}</span>
+                            <ng-template #t let-fill="fill">
+                                <span class="star">
+                                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                                </span>
+                            </ng-template>                           
+                            <ngb-rating
+                                [(rate)]="movie.rating"
+                                [starTemplate]="t"
+                                [readonly]="true"
+                                [max]="5"
+                            ></ngb-rating>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="theatre-movies">
+            <div class="top">
+                <h4>Phổ biến tại rạp</h4>
+                <div class="view-all">View all</div>
+            </div>
+            <div class="movies-thumnail">
+                <div class="movie" *ngFor="let movie of theatreMovies">
+                    <div class="cover" (click)="goToMovie('rap',movie.id)">
+                        <img [src]="movie.cover" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="name" (click)="goToMovie('rap',movie.id)">{{movie.name}}</div>
+                        <div class="rating">
+                            <span class="rating-value">{{movie.rating}}</span>
+                            <ng-template #t let-fill="fill">
+                                <span class="star">
+                                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                                </span>
+                            </ng-template>                           
+                            <ngb-rating
+                                [(rate)]="movie.rating"
+                                [starTemplate]="t"
+                                [readonly]="true"
+                                [max]="5"
+                            ></ngb-rating>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popular-movies">
+        <h4>Tất cả thể loại</h4>
+        <div class="movies">
+            <div class="movie" *ngFor="let movie of popularMovies">
+                <div class="detail">
+                    <div class="name" (click)="goToMovie('popular',movie.id)">{{movie.name}}</div>
+                    <div class="rating">
+                        <span class="rating-value">{{movie.rating}}</span>
+                        <ng-template #t let-fill="fill">
+                            <span class="star">
+                                <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                            </span>
+                        </ng-template>                           
+                        <ngb-rating
+                            [(rate)]="movie.rating"
+                            [starTemplate]="t"
+                            [readonly]="true"
+                            [max]="5"
+                        ></ngb-rating>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">View all</div>
+        </div>
+    </div>
+</div>
