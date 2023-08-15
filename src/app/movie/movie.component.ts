@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieComponent implements OnInit{  
     type='';
     id='';
-    url='';
     movies: any;
     movie:any;
     
@@ -19,7 +18,6 @@ export class MovieComponent implements OnInit{
       this.type = this.route.snapshot.params['type'];     
       this.id = this.route.snapshot.params['id'];
       this.getMovie();
-      
     }
     getMovie(){
           this.http.get(`http://localhost:4200/assets/data/${this.type}-movies.json`).subscribe((movies) => {

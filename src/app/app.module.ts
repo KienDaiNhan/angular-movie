@@ -9,6 +9,9 @@ import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewallComponent } from './viewall/viewall.component';
+import { ViewtrendingComponent } from './viewtrending/viewtrending.component';
+import { ViewtheatreComponent } from './viewtheatre/viewtheatre.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    MovieComponent
+    MovieComponent,
+    ViewallComponent,
+    ViewtrendingComponent,
+    ViewtheatreComponent
   ],
   imports: [  
     BrowserModule,

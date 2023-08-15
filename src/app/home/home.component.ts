@@ -37,9 +37,17 @@ export class HomeComponent implements OnInit {
            console.log(this.popularMovies);
        });
       }
-
       goToMovie(type: string,id: string){
           this.router.navigate(['movie',type,id]);
+      }
+      vo(){
+        this.router.navigate(['viewall']);
+      }
+      phobien(){
+        this.router.navigate(['viewtrending']);
+      }
+      rap(){
+        this.router.navigate(['viewtheatre']);
       }
       
 }

@@ -4,7 +4,7 @@
         <div class="trending-movies">
             <div class="top">
                 <h4>Phim Thịnh Hành</h4>
-                <div class="view-all">View all</div>
+                <div class="view-all" (click)="phobien()" >View all</div>
             </div>
             <div class="movies-thumnail">
                 <div class="movie" *ngFor="let movie of trendingMovies">
@@ -34,7 +34,7 @@
         <div class="theatre-movies">
             <div class="top">
                 <h4>Phổ biến tại rạp</h4>
-                <div class="view-all">View all</div>
+                <div class="view-all" (click)="rap()">View all</div>
             </div>
             <div class="movies-thumnail">
                 <div class="movie" *ngFor="let movie of theatreMovies">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="view-all">View all</div>
+            <div class="view-all" (click)="vo()">View all</div>
         </div>
     </div>
 </div>
