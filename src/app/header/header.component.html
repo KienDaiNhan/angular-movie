@@ -1,4 +1,7 @@
 <div class="header-container">
     <div class="logo" (click)="gotoHome()">CGV Việt Nam</div>
     <div class="logout" (click)="logout()">Đăng xuất</div>
+  
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+
 </div>

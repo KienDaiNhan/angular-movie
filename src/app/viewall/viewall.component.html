@@ -3,8 +3,8 @@
         <h4>Tất cả thể loại</h4>
         <div class="movies">
             <div class="movie" *ngFor="let movie of popularMovies">
-                <div class="cover" >
-                    <img style="cursor: pointer;    " [src]="movie.cover" alt="">
+                <div class="cover" (click)="goToMovie('popular',movie.id)">
+                    <img style="cursor: pointer;" [src]="movie.cover" alt="">
                 </div>
                 <div class="detail">
                     <div class="name" >{{movie.name}}</div>

@@ -5,8 +5,8 @@
     </div>
     <div class="movies-thumnail">
         <div class="movie" *ngFor="let movie of trendingMovies">
-            <div class="cover">
-                <img [src]="movie.cover" alt="">
+            <div class="cover" (click)="goToMovie('trending',movie.id)" >
+                <img style="cursor: pointer;" [src]="movie.cover" alt="">
             </div>
             <div class="detail">
                 <div class="name">{{movie.name}}</div>
