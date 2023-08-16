@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+
 
 
 @Component({
@@ -9,8 +10,9 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  dataSource:any;
-
+  @Input() dataSource: any;  // Ideally this also should have type as MatTableDataSource
+  @Output() filteredData = new EventEmitter();
+  search: string = '';
   constructor(private router:Router,private auth:AuthService){
 
   }
@@ -26,6 +28,10 @@ export class HeaderComponent implements OnInit {
         applyFilter(event: Event) {
           const filterValue = (event.target as HTMLInputElement).value;
           this.dataSource.filter = filterValue.trim().toLowerCase();
+        }
+        searchData(): void {
+          this.dataSource.filter = this.search;
+          this.filteredData.emit(this.dataSource.filteredData);
         }
  
 }
